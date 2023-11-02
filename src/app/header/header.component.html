@@ -1,0 +1,23 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Recipe Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="activeMenuLink('recipies')" href="#">Recipies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="activeMenuLink('shoppinglist')" href="#">Shopping list</a>
+            </li>
+            <li class="nav-item dropdown" #dropdownToggle>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">Manage</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Save Data</a></li>
+                    <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,14 @@
+<div class="card-product" (click)="clickRecipeItem()">
+    <a href="#" class="card-body">
+        <div class="row">
+            <div class="col">
+                <h4 class="card-title">{{item.name}}</h4>
+                <p class="card-text">{{item.desc}}</p>
+            </div>
+            <span class="col">
+                <img src="{{item.imagePath}}" alt="{{item.name}}" class="img-responsive rounded float-end"
+                    style="max-height: 100px;">
+            </span>
+        </div>
+    </a>
+</div>

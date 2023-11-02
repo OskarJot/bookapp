@@ -1,0 +1,15 @@
+.card-product {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .card-body {
+    text-decoration: none;
+  }
+  
+  .card-product:hover {
+    background-color: rgb(185, 185, 185);
+  }
