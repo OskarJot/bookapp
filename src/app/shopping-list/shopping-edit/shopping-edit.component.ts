@@ -1,11 +1,6 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  ViewChild,
-  Output,
-} from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list.service';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -16,10 +11,10 @@ export class ShoppingEditComponent {
   @ViewChild('nameInput', { static: true }) nameInput: ElementRef;
   @ViewChild('amountInput', { static: true }) numberInput: ElementRef;
 
-  @Output() addIngredient = new EventEmitter<Ingredient>();
-
   ingredienName = '';
   ingredientAmount: number;
+
+  constructor(private slShoppingList: ShoppingListService) {}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -32,6 +27,6 @@ export class ShoppingEditComponent {
       this.ingredienName,
       this.ingredientAmount
     );
-    this.addIngredient.emit(newIngredient);
+    this.slShoppingList.onIngredientAdded(newIngredient);
   }
 }
