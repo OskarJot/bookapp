@@ -1,10 +1,19 @@
-import { Injectable } from '@angular/core';
+// import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+import { Ingredient } from "../shared/ingredient.model";
+
+// @Injectable({
+//   providedIn: 'root'
+// })
 export class ShoppingListService {
+  ingredients: Ingredient[] = [
+    new Ingredient('Apple', 6),
+    new Ingredient('Banana', 2),
+  ];
 
-constructor() { }
+  constructor() {}
 
+  addNewIngredients() {
+    
+  }
 }

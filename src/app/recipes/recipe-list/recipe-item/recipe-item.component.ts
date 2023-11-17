@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Recipe } from '../../recipe.model';
+import { RecipesService } from '../../recipes.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -6,11 +8,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent {
-@Input() item: {name: string, desc: string, imagePath: string}
-@Output() itemClicked = new EventEmitter<void>();
+@Input() recipe: Recipe;
 
-clickRecipeItem() {
-  this.itemClicked.emit();
+constructor(private recepieService: RecipesService) {
+
+}
+
+onSelected () {
+  this.recepieService.recepieSelected.emit(this.recipe)
 }
 
 }

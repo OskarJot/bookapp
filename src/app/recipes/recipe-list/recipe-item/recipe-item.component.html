@@ -1,12 +1,12 @@
-<div class="card-product" (click)="clickRecipeItem()">
+<div class="card-product" (click)="onSelected()">
     <a href="#" class="card-body">
         <div class="row">
             <div class="col">
-                <h4 class="card-title">{{item.name}}</h4>
-                <p class="card-text">{{item.desc}}</p>
+                <h4 class="card-title">{{recipe.name}}</h4>
+                <p class="card-text">{{recipe.description}}</p>
             </div>
             <span class="col">
-                <img src="{{item.imagePath}}" alt="{{item.name}}" class="img-responsive rounded float-end"
+                <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="img-responsive rounded float-end"
                     style="max-height: 100px;">
             </span>
         </div>
