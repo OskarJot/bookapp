@@ -11,7 +11,6 @@ export class RecipeItemComponent {
 
 clickRecipeItem() {
   this.itemClicked.emit();
-  
 }
 
 }

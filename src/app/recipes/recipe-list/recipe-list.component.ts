@@ -1,36 +1,29 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'],
 })
-export class RecipeListComponent {
+export class RecipeListComponent implements OnInit {
   @Output() showDetailsRecepies = new EventEmitter<Recipe>();
 
-  recepies: Recipe[] = [
-    new Recipe(
-      'This is Test1 Recipe',
-      'Desc this Repice Test2',
-      'https://www.foodandwine.com/thmb/tAS-x_IC4ss1cb9EdDpsr0UExdM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/bucatini-with-mushroom-ragu-dandelion-greens-and-tarragon-FT-RECIPE0421-3a5f0d29f7264f5e9952d4a3a51f5f58.jpg'
-    ),
-    new Recipe(
-      'This is Test2 Recipe',
-      'Desc this Repice Test2',
-      'https://www.foodandwine.com/thmb/tAS-x_IC4ss1cb9EdDpsr0UExdM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/bucatini-with-mushroom-ragu-dandelion-greens-and-tarragon-FT-RECIPE0421-3a5f0d29f7264f5e9952d4a3a51f5f58.jpg'
-    ),
-    new Recipe(
-      'This is Test3 Recipe',
-      'Desc this Repice Test2',
-      'https://www.foodandwine.com/thmb/tAS-x_IC4ss1cb9EdDpsr0UExdM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/bucatini-with-mushroom-ragu-dandelion-greens-and-tarragon-FT-RECIPE0421-3a5f0d29f7264f5e9952d4a3a51f5f58.jpg'
-    ),
-  ];
+  constructor(private recepiesService: RecipesService) {}
 
-  clickedRecipe: any = {}
-  
+  recepies: Recipe[];
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.recepies = this.recepiesService.getRecepiesList();
+  }
+
+  clickedRecipe: any = {};
+
   showRecipeDetail(recepie: Recipe) {
-    this.showDetailsRecepies.emit(recepie)
+    this.showDetailsRecepies.emit(recepie);
     // console.log(this.clickedRecipe);
   }
 }
