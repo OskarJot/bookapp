@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   ElementRef,
   Renderer2,
@@ -14,7 +14,6 @@ import * as bootstrap from 'bootstrap'; // Import Bootstrap JavaScript functions
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements AfterViewInit {
-  @Output() menuServices = new EventEmitter<string>();
 
   activeLink: string = ''
 
@@ -34,6 +33,5 @@ export class HeaderComponent implements AfterViewInit {
 
   activeMenuLink(link: string) {
     this.activeLink = link;
-    this.menuServices.emit(this.activeLink);
   }
 }

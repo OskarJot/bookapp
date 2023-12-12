@@ -19,6 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import {AppRoutingModule} from "./app-routing.module";
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent],

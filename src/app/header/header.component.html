@@ -2,13 +2,13 @@
     <div class="container-fluid">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Recipe Book</a>
+                <a class="navbar-brand m-lg-3" aria-current="page" href="">Recipe Book</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="activeMenuLink('recipies')" href="#">Recipies</a>
+                <a class="nav-link" routerLink="/recipes" href="#">Recipies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="activeMenuLink('shoppinglist')" href="#">Shopping list</a>
+                <a class="nav-link" routerLink="/shopping-list" href="#">Shopping list</a>
             </li>
             <li class="nav-item dropdown" #dropdownToggle>
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
