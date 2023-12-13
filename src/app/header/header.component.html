@@ -1,21 +1,21 @@
 <nav class="navbar">
     <div class="container-fluid">
         <ul class="nav nav-tabs">
-            <li class="nav-item">
+            <li routerLinkActive="active" class="nav-item">
                 <a class="navbar-brand m-lg-3" aria-current="page" href="">Recipe Book</a>
             </li>
-            <li class="nav-item">
+            <li routerLinkActive="active" class="nav-item">
                 <a class="nav-link" routerLink="/recipes" href="#">Recipies</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/shopping-list" href="#">Shopping list</a>
             </li>
             <li class="nav-item dropdown" #dropdownToggle>
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                <a style="cursor: pointer" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
                     aria-expanded="false">Manage</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Save Data</a></li>
-                    <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+                    <li><a class="dropdown-item" style="cursor: pointer">Save Data</a></li>
+                    <li><a class="dropdown-item" style="cursor: pointer">Fetch Data</a></li>
                 </ul>
             </li>
         </ul>

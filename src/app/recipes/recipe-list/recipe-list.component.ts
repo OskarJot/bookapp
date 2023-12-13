@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipesService } from '../recipes.service';
-
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
@@ -10,7 +9,8 @@ import { RecipesService } from '../recipes.service';
 export class RecipeListComponent implements OnInit {
   @Output() showDetailsRecepies = new EventEmitter<Recipe>();
 
-  constructor(private recepiesService: RecipesService) {}
+  constructor(private recepiesService: RecipesService) {
+  }
 
   recepies: Recipe[];
 
@@ -26,4 +26,5 @@ export class RecipeListComponent implements OnInit {
     this.showDetailsRecepies.emit(recepie);
     // console.log(this.clickedRecipe);
   }
+
 }

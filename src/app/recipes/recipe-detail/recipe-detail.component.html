@@ -13,9 +13,9 @@
     <div class="col-xs-12">
         <button mat-raised-button [matMenuTriggerFor]="menu">Manage Recipe</button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item><a href="#" (click)="onAddToShoppingList()">To shopping List</a></button>
-            <button mat-menu-item><a href="#">Edit Recipe</a></button>
-            <button mat-menu-item><a href="#">Delate Recipe</a></button>
+            <button mat-menu-item><a style="cursor: pointer" (click)="onAddToShoppingList()">To shopping List</a></button>
+            <button mat-menu-item><a style="cursor: pointer">Edit Recipe</a></button>
+            <button mat-menu-item><a style="cursor: pointer">Delate Recipe</a></button>
         </mat-menu>
     </div>
 </div>
